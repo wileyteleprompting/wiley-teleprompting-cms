@@ -7,13 +7,59 @@ $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
-$body-color: #333
-$black: #2b2523
+$body-color: #ffffff
+$black: #141414
+$blue: #5E89FB
 
-.navbar .navbar-menu
+body
+  background-color: $black
+  color: $body-color
+
+.triangle
+  position: fixed
+  top: 8em
+  left: 0
+  width: 70px
+  border-top: 30px solid transparent
+  border-bottom: 30px solid transparent
+  border-left: 40px solid $body-color
+
+.navbar
+  background-color: $black !important
+  border-bottom: 1px solid $blue
+  height: 100px
+
+
+.navbar-menu
+  background-color: $black !important
   box-shadow:none !important
 
+.navbar-burger
+  color: $blue !important
+  cursor: pointer
+  display: block
+  height: 6.25rem !important
+  position: relative
+  width: 3.25rem
+  margin-left: auto
+  span
+    background-color: $blue !important
+    display: block
+    height: 1px
+    left: calc(50% - 8px)
+    position: absolute
+    transform-origin: center
+    transition-duration: 86ms
+    transition-property: background-color, opacity, transform
+    transition-timing-function: ease-out
+    width: 16px
+
+.content
+  h1, h2, h3, h4
+    color: $body-color !important
+
 .content .taglist
+  color: $body-color !important
   list-style: none
   margin-bottom: 0
   margin-left: 0
@@ -70,6 +116,10 @@ $black: #2b2523
 
 .margin-top-0
   margin-top: 0 !important
+.navbar-item
+  font-size: 1.5em !important
+  color: $blue !important
+
 
 .navbar-item .icon
   color: $primary

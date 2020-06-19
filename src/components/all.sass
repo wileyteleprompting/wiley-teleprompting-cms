@@ -12,9 +12,13 @@ $body-color: #ffffff
 $black: #141414
 $blue: #5E89FB
 
+html
+  background-color: $black
+
 body
   background-color: $black
   color: $body-color
+  margin-top: 7.5em
 
 .triangle
   position: fixed
@@ -60,6 +64,18 @@ body
 
 .content-top
   margin-top: 7.5em
+  box-sizing: border-box
+  animation: marquee 35s linear infinite
+  &:hover
+    animation-play-state: paused
+
+/* Make it move! */
+@keyframes marquee
+  0%
+    top: 1em
+
+  100%
+    top: -35em  
 
 .content
   h1, h2, h3, h4
@@ -173,17 +189,12 @@ $menu-label-color: $white-ter
     vertical-align: middle
     display: inline
 
-// blog roll
-.blog-list-item.is-featured
-  background-color: #d6400033;
-.blog-list-item header
-  display: flex;
-  margin-bottom: 1em;
-.blog-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
-
-
+.photos
+  max-width: 1200px
+  margin: 0 0
+  display: grid
+  grid-gap: 1rem
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr))
 
 
 

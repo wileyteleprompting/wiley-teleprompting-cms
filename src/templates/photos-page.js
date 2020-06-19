@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const IndexPageTemplate = ({ title, content, contentComponent }) => {
+export const PhotosPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -22,44 +21,78 @@ export const IndexPageTemplate = ({ title, content, contentComponent }) => {
           </div>
         </div>
       </div>
+
+    
+
+
+
     </section>
   )
 }
 
-IndexPageTemplate.propTypes = {
+PhotosPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
+const gramURL = 'https://www.instagram.com/p/'
 
-const IndexPage = ({ data }) => {
+const PhotosPage = ({ data }) => {
+
   const { markdownRemark: post } = data
+
+  const { allInstaNode: images } = data
 
   return (
     <Layout>
-      <IndexPageTemplate
+      <PhotosPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
       />
+
+<div className="photos" >
+{images.edges.map(({ node }) => (
+
+<div className="photo"  key={node.id}>
+  <a href={gramURL+node.id} target="_blank" rel="noopener noreferrer">
+    <img src={node.thumbnails[2].src} alt="Wiley Teleprompting Instagram Photos" />
+  </a>
+
+</div>
+   ))}
+</div>
+
+
     </Layout>
   )
 }
 
-IndexPage.propTypes = {
+PhotosPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default IndexPage
+export default PhotosPage
 
-export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-      title
+export const photosPageQuery = graphql`
+  query PhotosPage($id: String!) {
+    allInstaNode {
+    edges {
+      node {
+        id
+        thumbnails {
+          config_height
+          config_width
+          src
+        }
+      }
     }
-    html
-
+  }
+    markdownRemark(id: { eq: $id }) {
+      html
+      frontmatter {
+        title
+      }
     }
   }
 `

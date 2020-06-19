@@ -1,6 +1,6 @@
 ---
-templateKey: about-page
-path: /about
+templateKey: services-page
+path: /services
 title: Services
 ---
 ## Remote Teleprompting:

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
@@ -9,16 +9,8 @@ export const IndexPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
+    <section>
+      <PageContent className="scroll" content={content} />
     </section>
   )
 }

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
 import Logo from './Logo'
+import LogoMobile from './LogoMobile'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -10,8 +9,24 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: '',
+      width: null,
     }
   }
+
+  componentDidMount() {
+    this.updatePredicate();
+    window.addEventListener("resize", this.updatePredicate);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updatePredicate);
+  }
+
+  updatePredicate = () => {
+    this.setState({ width: window.innerWidth });
+    console.log('window.innerWidth', window.innerWidth, 'width state', this.state.width)
+  }
+
 
   toggleHamburger = () => {
     // toggle the active boolean in the state
@@ -36,21 +51,25 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navblack navbar is-transparent"
+        className="navbar"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
+            <Link to="/" className="center-mobile" title="Wiley Teleprompting">
               {/* <img src={logo} alt="Kaldi" style={{ width: '550px' }} /> */}
-              <Logo />
+              {this.state.width > 525 ? <Logo /> : <LogoMobile />}
             </Link>
+    
             {/* Hamburger menu */}
             <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+              tabIndex="0"
+              className={`navbar-burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
+              role="menu"
               onClick={() => this.toggleHamburger()}
+              onKeyPress={() => this.toggleHamburger()}
             >
               <span />
               <span />

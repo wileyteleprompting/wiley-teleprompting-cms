@@ -6,6 +6,6 @@ Wiley Teleprompting provides professional, reliable teleprompting services for v
 
 Our warm, friendly and experienced operators provide seamless, courteous, professional services in even the highest pressure productions.
 
-Please don't hesitate to [contact us with any questions!](/contact)
+[Contact us with any questions!](/contact)
 
 We would love to serve you!

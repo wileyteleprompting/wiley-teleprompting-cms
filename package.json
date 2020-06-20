@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
+  "name": "wiley-teleprompting-on-netlify-cms",
+  "description": "Professional teleprompting services using Netlify CMS",
   "version": "1.1.3",
-  "author": "Austin Green",
+  "license": "MIT",
   "dependencies": {
     "bulma": "^0.9.0",
     "gatsby": "^2.23.3",
@@ -35,8 +35,6 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "clean": "gatsby clean",
     "start": "npm run develop",

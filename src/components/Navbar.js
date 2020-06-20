@@ -57,7 +57,7 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="center-mobile" title="Wiley Teleprompting">
+            <Link to="/" className="vertical-logo" title="Wiley Teleprompting">
               {/* <img src={logo} alt="Kaldi" style={{ width: '550px' }} /> */}
               {this.state.width > 525 ? <Logo /> : <LogoMobile />}
             </Link>

@@ -9,7 +9,7 @@ export const IndexPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section>
+    <section className="marquee">
       <PageContent className="scroll" content={content} />
     </section>
   )

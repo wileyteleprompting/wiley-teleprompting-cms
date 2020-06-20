@@ -49,9 +49,11 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <div className="triangle"></div>
+      <div className="vertical">
       <Navbar /> 
-      <div>{children}</div>
+      {children}
       <Footer />
+      </div>
     </div>
   )
 }

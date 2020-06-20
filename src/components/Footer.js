@@ -8,13 +8,13 @@ import instagram from '../img/social/instagram.svg'
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer">
+      <footer>
         <div style={{ maxWidth: "100vw" }} className="columns">
           <Link to="/" title="Wiley Teleprompting">
             <img
               src={logo}
               alt="Wiley Teleprompting"
-              style={{ width: "14em", height: "10em" }}
+              className="footer-logo"
             />
           </Link>
 

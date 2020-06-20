@@ -29,30 +29,23 @@ a
   border-bottom: 40px solid transparent
   border-left: 50px solid $body-color
 
-.container
-  flex-grow: 1
-  margin: auto 3.5rem
-  position: relative
-  width: 90%
+.vertical 
+  display: flex
+  min-height: 100vh
+  flex-direction: column
 
-.center-mobile
-  margin-top: 20px
-
-@media screen and (max-width: 1023px)
+@media screen and (max-width: 1024px)
   .navbar > .container
     display: block
-
   .navbar-menu
     background-color: $black !important
     box-shadow:none !important
     width: 100vw
     margin: 0 3em 0 0
     padding: 0 4.5em 0 0
-  .center-mobile
-     margin-top: 40px
-
+  .vertical-logo
+    margin: 34px 0 0 -12px
   .navbar-brand .navbar-item
-    align-items: center
     display: flex
     a
       &:hover, &.is-active
@@ -62,18 +55,12 @@ a
     &.is-active
       display: block
 
-@media screen and (min-width: 1023px)
-  .container
-    margin-left: 3.5rem
-
 @media screen and (min-width: 1216px)
   .container
     margin: auto 3.5rem
-
 @media screen and (min-width: 1408px)
   .container
     margin: auto 3.5rem
-
 
 .navbar
   background-color: $black !important
@@ -82,7 +69,11 @@ a
   position: fixed !important
   top: 0
   width: 100vw
- 
+.container
+  flex-grow: 1
+  margin: auto 3.5rem
+  position: relative
+  width: 90%
 .navbar-burger
   color: $blue !important
   height: 7.25rem !important
@@ -112,17 +103,26 @@ a.navbar-item
 
 section
   padding: 3rem 3.5rem
+  flex: 1
+
 h1
   font-size: 5em
   font-weight: 900
   margin: 0 0 3rem
-.scroll 
-  font-size: 4em
-  animation: marquee 35s linear infinite;
-  &:hover
-    animation-play-state: paused
-  p
-    margin-bottom: 1em
+
+.marquee
+  position: relative
+  overflow: hidden
+  display: block
+  height: 100vw
+
+  div
+    display: block
+    position: absolute
+    animation: marquee 35s linear infinite
+    
+    &:hover
+      animation-play-state: paused
 
 /* Make it move! */
 @keyframes marquee
@@ -130,6 +130,13 @@ h1
     top: 1em
   100%
     top: -35em 
+
+.scroll 
+  font-size: 4em
+
+  p
+    margin-bottom: 1em
+   
 
 .page
   font-size: 3em
@@ -192,6 +199,10 @@ h1
     height: 1em
     vertical-align: middle
     display: inline
+    
+    &:hover
+      background-color: $body-color !important
+    
 
 .photos
   max-width: 1200px
@@ -201,9 +212,17 @@ h1
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr))
 
 footer
-  margin: auto 3.5rem
   background-color: $black !important
+  z-index: 0
+  padding: 1em 3em
+  position: sticky
+  bottom: 0
+  width: 100vw
+  border-top: 1px solid $blue
 
+.footer-logo
+  width: 14em
+  height: 4em
 
 // responsiveness
 +tablet-only
@@ -248,8 +267,8 @@ footer
       display: block
       margin: 0
       padding: 0
-  .center-mobile
-    margin-top: 25px
+  .vertical-logo
+    margin: 34px 0 14px -12px
   .navbar-burger
     color: $blue !important
     height: 7.25rem !important
@@ -280,5 +299,3 @@ footer
   .center-mobile
     margin: 25px 0 20px
   
-
- 

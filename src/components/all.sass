@@ -15,6 +15,11 @@ body
   color: $body-color
   margin-top: 7.5em
 
+a
+  &:focus, &:focus-within, &:hover, &.is-active
+    background-color: $black !important
+    color: $blue !important
+
 .triangle
   position: fixed
   top: 11.5em
@@ -23,6 +28,12 @@ body
   border-top: 40px solid transparent
   border-bottom: 40px solid transparent
   border-left: 50px solid $body-color
+
+.container
+  flex-grow: 1
+  margin: auto 3.5rem
+  position: relative
+  width: 90%
 
 .center-mobile
   margin-top: 20px
@@ -51,15 +62,7 @@ body
     &.is-active
       display: block
 
-
-
-.container
-  flex-grow: 1
-  margin: auto 3.5rem
-  position: relative
-  width: 90%
-
-@media screen and (min-width: 1024px)
+@media screen and (min-width: 1023px)
   .container
     margin-left: 3.5rem
 
@@ -102,42 +105,24 @@ body
 .navbar-item
   font-size: 1.5em !important
   color: $blue !important
-  a
-    &:hover, &.is-active
-      background-color: $black !important
-      color: $blue !important
-      padding-right: 2em
-
-.navbar-item .icon
-  color: $primary
-// Override for use of svg's from https://simpleicons.org/
-.icon svg
-  width: 1.5rem
-  height: 1.5rem
-  fill: currentColor
-.navbar-brand .navbar-item.logo
-  padding: 0 1rem
-.menu-label
-  font-size: 1em !important
-  text-align: left
-.menu-list
-  list-style: none !important
-  text-align: left
-
+a.navbar-item
+  &:focus, &:focus-within, &:hover, &.is-active
+    background-color: $black !important
+    color: $blue !important
 
 section
   padding: 3rem 3.5rem
-
 h1
   font-size: 5em
   font-weight: 900
   margin: 0 0 3rem
-
 .scroll 
   font-size: 4em
   animation: marquee 35s linear infinite;
   &:hover
     animation-play-state: paused
+  p
+    margin-bottom: 1em
 
 /* Make it move! */
 @keyframes marquee

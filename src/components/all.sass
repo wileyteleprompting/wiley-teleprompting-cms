@@ -6,12 +6,13 @@
 $body-color: #ffffff
 $black: #141414
 $blue: #5E89FB
+$font: Arial, Helvetica, sans-serif
 
 html
   background-color: $black
 
 body
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif
   color: $body-color
   margin-top: 7.5em
 
@@ -55,13 +56,6 @@ a
     &.is-active
       display: block
 
-@media screen and (min-width: 1216px)
-  .container
-    margin: auto 3.5rem
-@media screen and (min-width: 1408px)
-  .container
-    margin: auto 3.5rem
-
 .navbar
   background-color: $black !important
   border-bottom: 1px solid $blue
@@ -73,7 +67,8 @@ a
   flex-grow: 1
   margin: auto 3.5rem
   position: relative
-  width: 90%
+  margin: auto 3.5rem
+  max-width: 100vw
 .navbar-burger
   color: $blue !important
   height: 7.25rem !important
@@ -211,19 +206,6 @@ h1
   grid-gap: 1rem
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr))
 
-footer
-  background-color: $black !important
-  z-index: 0
-  padding: 1em 3em
-  position: sticky
-  bottom: 0
-  width: 100vw
-  border-top: 1px solid $blue
-
-.footer-logo
-  width: 14em
-  height: 4em
-
 // responsiveness
 +tablet-only
   .blog-list-item .featured-thumbnail
@@ -236,7 +218,6 @@ footer
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
-
 
 @media screen and (max-width: 610px)
   .triangle
@@ -298,4 +279,24 @@ footer
     height: 170px
   .center-mobile
     margin: 25px 0 20px
+
+// footer
+
+footer
+  background-color: $black !important
+  z-index: 0
+  padding: 1em 3em
+  position: sticky
+  bottom: 0
+  width: 100vw
+  border-top: 1px solid $blue
+  // display: flex
+  // justify-content: space-
+
+.footer-logo
+  width: 14em
+  height: 4em
   
+@media screen and (max-width: 769px), print
+  .columns:not(.is-desktop)
+    display: flex

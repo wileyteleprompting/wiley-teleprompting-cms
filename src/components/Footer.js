@@ -8,13 +8,12 @@ import instagram from '../img/social/instagram.svg'
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer>
-        <div style={{ maxWidth: "100vw" }} className="columns">
+      <footer className="columns is-centered">
           <Link to="/" title="Wiley Teleprompting">
             <img
               src={logo}
               alt="Wiley Teleprompting"
-              className="footer-logo"
+              className="footer-logo is-narrow"
             />
           </Link>
 
@@ -44,7 +43,6 @@ const Footer = class extends React.Component {
               />
             </a>
           </div>
-        </div>
       </footer>
     );
   }

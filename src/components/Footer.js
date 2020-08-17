@@ -9,15 +9,16 @@ const Footer = class extends React.Component {
   render() {
     return (
       <footer className="columns is-centered">
-          <Link to="/" title="Wiley Teleprompting">
+        <div className="column is-half columns is-centered">
+        <Link to="/" title="Wiley Teleprompting">
             <img
               src={logo}
               alt="Wiley Teleprompting"
-              className="footer-logo is-narrow"
+              style={{ width: "100%", verticalAlign: "middle" }}
             />
           </Link>
 
-          <div className="column is-2 social">
+          <div className="column is-half social">
             <a
               title="facebook"
               href="https://www.facebook.com/WileyTeleprompting/"
@@ -43,6 +44,7 @@ const Footer = class extends React.Component {
               />
             </a>
           </div>
+        </div>
       </footer>
     );
   }

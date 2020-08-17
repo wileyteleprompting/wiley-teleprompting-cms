@@ -182,23 +182,6 @@ h1
     -webkit-transition: all .15s ease
     transition: all .15s ease
 
-
-.social
-  margin: auto 2em
-.social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
-    
-    &:hover
-      background-color: $body-color !important
-    
-
 .photos
   max-width: 1200px
   margin: auto 3.5rem
@@ -281,7 +264,6 @@ h1
     margin: 25px 0 20px
 
 // footer
-
 footer
   background-color: $black !important
   z-index: 0
@@ -290,13 +272,27 @@ footer
   bottom: 0
   width: 100vw
   border-top: 1px solid $blue
-  // display: flex
-  // justify-content: space-
+  display: flex
 
 .footer-logo
   width: 14em
-  height: 4em
+
+.social
+  margin: auto 2em
+.social a
+  padding: .5em .5em .3em .5em
+  border-radius: 1em
+  background-color: $white-ter
+  margin: .5em
+  width: 1em
+  height: 1em
+  vertical-align: middle
+  display: inline
   
-@media screen and (max-width: 769px), print
-  .columns:not(.is-desktop)
-    display: flex
+  &:hover
+    background-color: $body-color !important
+  
+  
+// @media screen and (max-width: 769px), print
+//   .columns:not(.is-desktop)
+//     display: flex
